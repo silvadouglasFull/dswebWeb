@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DS Web Dev Design System - Dark theme focused with neon cyan accents */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    /* DS Web Dev Brand Colors */
+    --ds-dark: 0 0% 20%; /* #333333 */
+    --ds-neon: 185 100% 52%; /* #04FBFF */
+    --ds-white: 60 9% 98%; /* #FFFEFA */
+    
+    /* Dark theme as default */
+    --background: var(--ds-dark);
+    --foreground: var(--ds-white);
+
+    --card: 0 0% 15%;
+    --card-foreground: var(--ds-white);
+
+    --popover: 0 0% 15%;
+    --popover-foreground: var(--ds-white);
+
+    --primary: var(--ds-neon);
+    --primary-foreground: var(--ds-dark);
+
+    --secondary: 0 0% 25%;
+    --secondary-foreground: var(--ds-white);
+
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: var(--ds-neon);
+    --accent-foreground: var(--ds-dark);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--ds-white);
+
+    --border: 0 0% 30%;
+    --input: 0 0% 25%;
+    --ring: var(--ds-neon);
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--ds-neon)), hsl(185 100% 40%));
+    --gradient-dark: linear-gradient(135deg, hsl(var(--ds-dark)), hsl(0 0% 10%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ds-dark)) 0%, hsl(0 0% 8%) 100%);
+    
+    /* Shadows with neon glow */
+    --shadow-neon: 0 0 20px hsl(var(--ds-neon) / 0.3);
+    --shadow-neon-strong: 0 0 40px hsl(var(--ds-neon) / 0.5);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  /* Light theme override (for specific components if needed) */
+  .light {
+    --background: var(--ds-white);
+    --foreground: var(--ds-dark);
+    --card: 0 0% 98%;
+    --card-foreground: var(--ds-dark);
+    --popover: 0 0% 98%;
+    --popover-foreground: var(--ds-dark);
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+    transition: var(--transition-smooth);
+  }
+  
+  .neon-glow:hover {
+    box-shadow: var(--shadow-neon-strong);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+  
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
