@@ -4,11 +4,8 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { CheckCircle, Clock, Instagram, Mail, MessageCircle, Send } from 'lucide-react';
+import { CheckCircle, Clock, Instagram, Mail, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 const Contato = () => {
@@ -45,7 +42,7 @@ const Contato = () => {
       icon: MessageCircle,
       title: 'WhatsApp',
       description: 'Resposta imediata',
-      value: '+55 11 99999-9999',
+      value: '+55 (19) 99970-5447',
       action: 'Conversar no WhatsApp',
       link: 'https://wa.me/5519999705447',
       primary: true
@@ -54,9 +51,9 @@ const Contato = () => {
       icon: Mail,
       title: 'E-mail',
       description: 'Resposta em até 2h',
-      value: 'contato@dswebdev.com',
+      value: 'suportedouglaspostopratico@gmail.com',
       action: 'Enviar E-mail',
-      link: 'mailto:contato@dswebdev.com'
+      link: 'mailto:suportedouglaspostopratico@gmail.com'
     },
     {
       icon: Instagram,
@@ -107,8 +104,34 @@ const Contato = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
+            {/* Working Hours */}
             <div>
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <Clock className="h-5 w-5 text-primary" />
+                Horário de Atendimento
+              </h3>
+              <Card className="border-border">
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    {workingHours.map((schedule) => (
+                      <div key={schedule.day} className="flex justify-between items-center">
+                        <span className="text-muted-foreground">{schedule.day}</span>
+                        <span className="font-medium">{schedule.hours}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+                    <p className="text-sm text-primary font-medium">
+                      💬 WhatsApp disponível 24/7 para emergências
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            {/* Contact Form */}
+            {
+              /*
+              <div>
               <h2 className="text-3xl font-bold mb-6">
                 Vamos conversar sobre seu <span className="text-gradient">projeto</span>
               </h2>
@@ -180,6 +203,8 @@ const Contato = () => {
                 </CardContent>
               </Card>
             </div>
+              */
+            }
 
             {/* Contact Methods */}
             <div className="space-y-8">
@@ -228,30 +253,7 @@ const Contato = () => {
                 </div>
               </div>
 
-              {/* Working Hours */}
-              <div>
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-primary" />
-                  Horário de Atendimento
-                </h3>
-                <Card className="border-border">
-                  <CardContent className="p-6">
-                    <div className="space-y-3">
-                      {workingHours.map((schedule) => (
-                        <div key={schedule.day} className="flex justify-between items-center">
-                          <span className="text-muted-foreground">{schedule.day}</span>
-                          <span className="font-medium">{schedule.hours}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
-                      <p className="text-sm text-primary font-medium">
-                        💬 WhatsApp disponível 24/7 para emergências
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+
             </div>
           </div>
         </div>
