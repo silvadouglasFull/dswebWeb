@@ -37,12 +37,12 @@ const Sobre = () => {
       description: 'Mais de 8 anos desenvolvendo soluções web e mobile. Especialista em React, Node.js e arquitetura de sistemas.',
       skills: ['React', 'Node.js', 'TypeScript', 'AWS']
     },
-    {
-      name: 'Thais Quintino',
-      role: 'UI/UX Designer',
-      description: 'Designer especializada em criar interfaces intuitivas e experiências excepcionais para os usuários.',
-      skills: ['Figma', 'Prototyping', 'User Research', 'Design Systems']
-    },
+    // {
+    //   name: 'Thais Quintino',
+    //   role: 'UI/UX Designer',
+    //   description: 'Designer especializada em criar interfaces intuitivas e experiências excepcionais para os usuários.',
+    //   skills: ['Figma', 'Prototyping', 'User Research', 'Design Systems']
+    // },
     {
       name: 'Heloísa Silva',
       role: 'Assistente Administrativa',
