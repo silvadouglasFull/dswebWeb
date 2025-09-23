@@ -57,8 +57,7 @@ const Servicos = () => {
         'Treinamento de equipes'
       ],
       technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'DevOps'],
-      price: 'A partir de R$ 700',
-      delivery: '30-60 dias'
+      price: 'A partir de R$ 0',
     },
     {
       icon: Computer,
