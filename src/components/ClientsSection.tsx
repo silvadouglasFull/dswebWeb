@@ -1,18 +1,19 @@
-import brasilcardLogo from '@/assets/clients/brasilcard.png';
 import dliosPrimoLogo from '@/assets/clients/dliosprimo.jpg';
 import flaFlorLogo from '@/assets/clients/flaflor.png';
 import greatwallLogo from '@/assets/clients/greatwall.png';
 import imaginacaoArteLogo from '@/assets/clients/imaginacao-arte.png';
+import infapLogo from '@/assets/clients/infap.png';
+import pathWiseLogo from '@/assets/clients/pathWise.png';
 import tudoAzulLogo from '@/assets/clients/tudo-azul.jpeg';
-
 const ClientsSection = () => {
   const clients = [
-    { name: 'Fla Flor Climatizações', logo: flaFlorLogo },
-    { name: 'Imaginação é Arte', logo: imaginacaoArteLogo },
-    { name: 'Soluções Greatwall', logo: greatwallLogo },
-    { name: "D'lios Primo", logo: dliosPrimoLogo },
-    { name: 'Tudo Azul Piscinas', logo: tudoAzulLogo },
-    { name: 'BrasilCard', logo: brasilcardLogo },
+    { name: 'Fla Flor Climatizações', logo: flaFlorLogo, site: 'https://flaflorclimatizacao.com.br' },
+    { name: 'Imaginação é Arte', logo: imaginacaoArteLogo, site: 'https://imaginacaoeartehelo.com.br' },
+    { name: 'Soluções Greatwall', logo: greatwallLogo, site: 'https://solucoesgreatwall.com.br/' },
+    { name: "D'lios Primo", logo: dliosPrimoLogo, site: 'https://dliosprimo.com.br' },
+    { name: 'Tudo Azul Piscinas', logo: tudoAzulLogo, site: 'https://tudoazulpiscinas.netlify.app' },
+    { name: 'Infap', logo: infapLogo, site: 'https://www.infap.org.br' },
+    { name: 'PathWise', logo: pathWiseLogo, site: 'https://pathwise.com.br' }
   ];
 
   return (
@@ -29,10 +30,12 @@ const ClientsSection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
           {clients.map((client, index) => (
-            <div
+            <a
               key={client.name}
+              href={`${client.site}`}
+              target='_blank'
               className="group relative p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{ animationDelay: `${index * 100}ms`, cursor: 'pointer' }}
             >
               <div className="aspect-square flex items-center justify-center">
                 <img
@@ -42,7 +45,7 @@ const ClientsSection = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
-            </div>
+            </a>
           ))}
         </div>
 

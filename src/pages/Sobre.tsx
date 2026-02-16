@@ -35,19 +35,22 @@ const Sobre = () => {
       name: 'Douglas Silva',
       role: 'CEO & Full Stack Developer',
       description: 'Mais de 8 anos desenvolvendo soluções web e mobile. Especialista em React, Node.js e arquitetura de sistemas.',
-      skills: ['React', 'Node.js', 'TypeScript', 'AWS']
+      skills: ['React', 'Node.js', 'TypeScript', 'AWS'],
+      links: ['https://www.linkedin.com/in/douglas-silvafullstack', 'https://github.com/silvadouglasFull']
     },
-    // {
-    //   name: 'Thais Quintino',
-    //   role: 'UI/UX Designer',
-    //   description: 'Designer especializada em criar interfaces intuitivas e experiências excepcionais para os usuários.',
-    //   skills: ['Figma', 'Prototyping', 'User Research', 'Design Systems']
-    // },
     {
       name: 'Heloísa Silva',
       role: 'Assistente Administrativa',
       description: 'Responsável por manter a organização interna e garantir que tudo funcione perfeitamente nos bastidores.',
-      skills: ['Organização', 'Comunicação', 'Gestão de Projetos', 'Atendimento ao Cliente']
+      skills: ['Organização', 'Comunicação', 'Gestão de Projetos', 'Atendimento ao Cliente'],
+      links: [],
+    },
+    {
+      name: 'Gustavo Barbosa',
+      role: 'Desenvolvedor Full Stack',
+      description: 'Desenvolvedor Back-end com foco em construção de APIs robustas, escaláveis e bem arquitetadas utilizando Java + Spring Boot. Experiência prática com arquitetura em camadas (Controller, Service, Repository), aplicação de princípios SOLID, versionamento de banco com migrations, documentação com Swagger e ambientes containerizados com Docker.',
+      skills: ['Java', 'Spring Boot', 'PostgreSQL', 'Docker', 'Git', 'REST APIs'],
+      links: ['https://www.linkedin.com/in/gustavo-barbosa-lima-341886278', 'https://github.com/Gustavo16378']
     }
   ];
 
@@ -88,6 +91,11 @@ const Sobre = () => {
       year: '2025',
       title: 'Conquistamos um cliente nacional',
       description: 'Expandimos nossa atuação conquistando clientes em todo o território nacional.'
+    },
+    {
+      year: '2026',
+      title: 'Inclusão de Agentes de IA',
+      description: 'Começamos o desenvolvimento de um chatboot para análise de vulnerabilidades social.'
     }
   ];
 
