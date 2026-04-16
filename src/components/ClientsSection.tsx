@@ -1,4 +1,5 @@
 import dliosPrimoLogo from '@/assets/clients/dliosprimo.jpg';
+import fioAgenda from '@/assets/clients/fioagenda.png';
 import flaFlorLogo from '@/assets/clients/flaflor.png';
 import greatwallLogo from '@/assets/clients/greatwall.png';
 import imaginacaoArteLogo from '@/assets/clients/imaginacao-arte.png';
@@ -13,7 +14,8 @@ const ClientsSection = () => {
     { name: "D'lios Primo", logo: dliosPrimoLogo, site: 'https://dliosprimo.com.br' },
     { name: 'Tudo Azul Piscinas', logo: tudoAzulLogo, site: 'https://tudoazulpiscinas.netlify.app' },
     { name: 'Infap', logo: infapLogo, site: 'https://www.infap.org.br' },
-    { name: 'PathWise', logo: pathWiseLogo, site: 'https://pathwise.com.br' }
+    { name: 'PathWise', logo: pathWiseLogo, site: 'https://pathwise.com.br' },
+    { name: 'Fio Agenda', logo: fioAgenda, site: 'https://fioagenda.com.br' },
   ];
 
   return (
@@ -29,7 +31,7 @@ const ClientsSection = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {clients.map((client, index) => (
+          {clients.sort((a, b) => a.name.localeCompare(b.name)).map((client, index) => (
             <a
               key={client.name}
               href={`${client.site}`}
