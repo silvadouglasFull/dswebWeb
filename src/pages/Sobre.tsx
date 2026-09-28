@@ -53,11 +53,12 @@ const Sobre = () => {
       links: ['https://www.linkedin.com/in/gustavo-barbosa-lima-341886278', 'https://github.com/Gustavo16378']
     }
   ];
-
+  const actualYear = new Date().getFullYear()
+  const foundingYear = 2022
   const stats = [
-    { number: '6+', label: 'Projetos Entregues', icon: Award },
+    { number: '8+', label: 'Projetos Entregues', icon: Award },
     { number: '3+', label: 'Estados do Brasil Atendidos', icon: Globe },
-    { number: '3+', label: 'Anos de Experiência', icon: Clock },
+    { number: `${(actualYear - foundingYear)}+`, label: 'Anos de Experiência', icon: Clock },
     { number: '98%', label: 'Satisfação do Cliente', icon: Users }
   ];
 
@@ -65,40 +66,59 @@ const Sobre = () => {
     {
       year: '2022',
       title: 'Fundação da DS Web Dev',
-      description: 'Iniciamos nossa jornada com o objetivo de democratizar o acesso à tecnologia de qualidade.'
+      description: 'Iniciamos nossa jornada com o propósito de transformar ideias complexas em soluções de software de alta performance.'
     },
     {
       year: '2022',
-      title: 'Conquistado o Primeiro cliente brasileiro',
-      description: 'Nosso primeiro cliente brasileiro confiou em nossa visão e nos ajudou a dar o pontapé inicial.'
+      title: 'Primeiro Cliente e Validação de Mercado',
+      description: 'Conquistamos nosso primeiro parceiro comercial, entregando sistemas sob medida e consolidando nossa presença no mercado nacional.'
     },
     {
       year: '2022',
-      title: 'Consultoria em TI',
-      description: 'Adicionamos serviços de consultoria para ajudar empresas em sua transformação digital.'
+      title: 'Expansão para Consultoria em TI',
+      description: 'Ampliamos nosso portfólio para incluir consultoria técnica estratégica, auxiliando empresas no processo de transformação digital.'
     },
     {
       year: '2023',
-      title: 'Certificações e Parcerias',
-      description: 'Obtivemos certificações importantes e estabelecemos parcerias estratégicas.'
+      title: 'Soluções Corporativas com Visão Computacional',
+      description: 'Entramos no setor de AgTech ao desenvolver plataformas com inteligência artificial para inspeção de qualidade no setor agropecuário (Brazil Beef Quality).'
+    },
+    {
+      year: '2023',
+      title: 'Certificações e Alianças Estratégicas',
+      description: 'Fortalecemos nossos padrões de engenharia de software com novas certificações e parcerias consolidadas no setor de tecnologia.'
     },
     {
       year: '2024',
-      title: 'Projeto projeto de grande porte',
-      description: 'Participamos no desenvolvimento de um sistema para a Artesp, orgão público responsável pela administração de todas as rodovias do estado de São Paulo.'
+      title: 'Projetos de Grande Porte para o Setor Público',
+      description: 'Atuamos na arquitetura e desenvolvimento de sistemas para a ARTESP, órgão responsável pela infraestrutura rodoviária do Estado de São Paulo.'
+    },
+    {
+      year: '2024',
+      title: 'Entrada nos Setores de Fintech e Insurtech',
+      description: 'Desenvolvemos ecossistemas web e mobile para captura de leads, score de crédito e análise securitária para a 11Ponto11.'
     },
     {
       year: '2025',
-      title: 'Conquistamos um cliente nacional',
-      description: 'Expandimos nossa atuação conquistando clientes em todo o território nacional.'
+      title: 'Modernização de Plataformas Nacionais de Grande Escala',
+      description: 'Assumimos a reengenharia de sistemas críticos da BrasilCard, modernizando a infraestrutura de gestão de lojistas com cobertura em todo o território nacional.'
     },
     {
       year: '2026',
-      title: 'Inclusão de Agentes de IA',
-      description: 'Começamos o desenvolvimento de um chatboot para análise de vulnerabilidades social.'
+      title: 'Lançamento do SaaS Proprietário: Fio Agenda',
+      description: 'Projetamos, desenvolvemos e lançamos o Fio Agenda, nossa plataforma SaaS/PWA com busca geoespacial e gestão automatizada, atualmente atendendo clientes em produção.'
+    },
+    {
+      year: '2026',
+      title: 'Inovação em Automação de Marketing com IA',
+      description: 'Criamos ferramentas corporativas autônomas baseadas em Inteligência Artificial para a EEmovel, automatizando fluxos de publicação e campanhas em redes sociais.'
+    },
+    {
+      year: '2026',
+      title: 'Portal Social de Dados Orientado a Agentes de IA',
+      description: 'Lançamos um portal interativo de análise de dados públicos e vulnerabilidade social, permitindo consultas em linguagem natural por meio de LLMs e agentes inteligentes.'
     }
   ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />

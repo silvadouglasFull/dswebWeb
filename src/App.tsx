@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Servicos from "./pages/Servicos";
 import Sobre from "./pages/Sobre";
+import Portfolio from "./pages/Portfolio";
 
 const queryClient = new QueryClient();
 const TRACKING_ID = import.meta.env.VITE_GA_ID;
@@ -39,7 +40,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/servicos" element={<Servicos />} />
-          {/* <Route path="/portfolio" element={<Portfolio />} /> */}
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

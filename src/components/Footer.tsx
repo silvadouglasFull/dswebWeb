@@ -1,4 +1,4 @@
-import { Award, Instagram, Lock, MessageCircle, Shield } from 'lucide-react';
+import { Award, Instagram, Lock, MessageCircle, Shield, Linkedin , Youtube} from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,6 +32,24 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/dswebdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors neon-glow"
+                aria-label="Linkedin"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="https://www.youtube.com/@dswebdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors neon-glow"
+                aria-label="Youtube"
+              >
+                <Youtube size={20} />
               </a>
             </div>
           </div>
