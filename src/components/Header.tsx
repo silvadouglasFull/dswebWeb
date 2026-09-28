@@ -1,4 +1,4 @@
-import dsLogo from '@/assets/ds-webdev-logo.png';
+import dsLogo from '@/assets/ds-webdev-logo.jpg';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
@@ -10,7 +10,7 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'Serviços', href: '/servicos' },
-    // { name: 'Portfólio', href: '/portfolio' },
+    { name: 'Portfólio', href: '/portfolio' },
     { name: 'Sobre Nós', href: '/sobre' },
     { name: 'Contato', href: '/contato' },
   ];
