@@ -8,14 +8,14 @@ import pathWiseLogo from '@/assets/clients/pathWise.png';
 import tudoAzulLogo from '@/assets/clients/tudo-azul.jpeg';
 const ClientsSection = () => {
   const clients = [
-    { name: 'Fla Flor Climatizações', logo: flaFlorLogo, site: 'https://flaflorclimatizacao.com.br' },
-    { name: 'Imaginação é Arte', logo: imaginacaoArteLogo, site: 'https://imaginacaoeartehelo.com.br' },
-    { name: 'Soluções Greatwall', logo: greatwallLogo, site: 'https://solucoesgreatwall.com.br/' },
-    { name: "D'lios Primo", logo: dliosPrimoLogo, site: 'https://dliosprimo.com.br' },
-    { name: 'Tudo Azul Piscinas', logo: tudoAzulLogo, site: 'https://tudoazulpiscinas.netlify.app' },
-    { name: 'Infap', logo: infapLogo, site: 'https://www.infap.org.br' },
-    { name: 'PathWise', logo: pathWiseLogo, site: 'https://pathwise.com.br' },
-    { name: 'Fio Agenda', logo: fioAgenda, site: 'https://fioagenda.com.br' },
+    {type: 'client', name: 'Fla Flor Climatizações', logo: flaFlorLogo, site: 'https://flaflorclimatizacao.com.br' },
+    {type: 'client', name: 'Imaginação é Arte', logo: imaginacaoArteLogo, site: 'https://imaginacaoeartehelo.com.br' },
+    {type: 'client', name: 'Soluções Greatwall', logo: greatwallLogo, site: 'https://solucoesgreatwall.com.br/' },
+    {type: 'client', name: "D'lios Primo", logo: dliosPrimoLogo, site: 'https://dliosprimo.com.br' },
+    {type: 'client', name: 'Tudo Azul Piscinas', logo: tudoAzulLogo, site: 'https://tudoazulpiscinas.netlify.app' },
+    {type: 'client', name: 'Infap', logo: infapLogo, site: 'https://www.infap.org.br' },
+    {type: 'client', name: 'PathWise', logo: pathWiseLogo, site: 'https://pathwise.com.br' },
+    {type: 'product', name: 'Fio Agenda', logo: fioAgenda, site: 'https://fioagenda.com.br' },
   ];
 
   return (
@@ -31,7 +31,7 @@ const ClientsSection = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {clients.sort((a, b) => a.name.localeCompare(b.name)).map((client, index) => (
+          {clients.sort((a, b) => a.name.localeCompare(b.name)).filter(client => client.type === 'client').map((client, index) => (
             <a
               key={client.name}
               href={`${client.site}`}
@@ -50,7 +50,31 @@ const ClientsSection = () => {
             </a>
           ))}
         </div>
-
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          SaaS / <span className="text-gradient"> Produtos Próprios</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+          {clients.sort((a, b) => a.name.localeCompare(b.name)).filter((client)=> client.type === 'product').map((client, index) => (
+            <a
+              key={client.name}
+              href={`${client.site}`}
+              target='_blank'
+              className="group relative p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+              style={{ animationDelay: `${index * 100}ms`, cursor: 'pointer' }}
+            >
+              <div className="aspect-square flex items-center justify-center">
+                <img
+                  src={client.logo}
+                  alt={`Logo ${client.name}`}
+                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
+            </a>
+          ))}
+        </div>
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-6">
             Junte-se a essas empresas e transforme sua ideia em realidade
