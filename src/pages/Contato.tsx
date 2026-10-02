@@ -51,9 +51,9 @@ const Contato = () => {
       icon: Mail,
       title: 'E-mail',
       description: 'Resposta em até 2h',
-      value: 'suportedouglaspostopratico@gmail.com',
+      value: 'contact.dswebdev@gmail.com',
       action: 'Enviar E-mail',
-      link: 'mailto:suportedouglaspostopratico@gmail.com'
+      link: 'mailto:contact.dswebdev@gmail.com'
     },
     {
       icon: Instagram,
