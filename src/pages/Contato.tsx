@@ -220,7 +220,7 @@ const Contato = () => {
                         style={{ animationDelay: `${index * 100}ms` }}
                       >
                         <CardContent className="p-6">
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-between flex-wrap">
                             <div className="flex items-center gap-4">
                               <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${method.primary ? 'bg-primary/20' : 'bg-primary/10'} group-hover:bg-primary/30 transition-colors neon-glow`}>
                                 <IconComponent className="h-6 w-6 text-primary" />
