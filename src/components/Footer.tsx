@@ -1,4 +1,4 @@
-import { Award, Instagram, Lock, MessageCircle, Shield, Linkedin , Youtube} from 'lucide-react';
+import { Award, Instagram, Linkedin, Lock, MessageCircle, Shield, Youtube } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -93,7 +93,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} DS Web Dev. Todos os direitos reservados.
+              © {currentYear} DS Web Dev. Todos os direitos reservados. CNPJ 46.677.082/0001-04
             </p>
             <p className="text-sm text-muted-foreground">
               Site desenvolvido por{' '}
