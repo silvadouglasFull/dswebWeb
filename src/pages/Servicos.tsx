@@ -4,78 +4,10 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, CheckCircle, Clock, Code, Computer, Settings, Smartphone, Users, Zap } from 'lucide-react';
+import { services } from '@/contants/services';
+import { ArrowRight, CheckCircle, Clock, Users, Zap } from 'lucide-react';
 
 const Servicos = () => {
-  const services = [
-    {
-      icon: Code,
-      title: 'Desenvolvimento Web',
-      subtitle: 'Sites e sistemas web personalizados',
-      description: 'Desenvolvemos sites institucionais, e-commerce, sistemas de gestão e aplicações web completas. Utilizamos as tecnologias mais modernas do mercado para garantir performance, segurança e escalabilidade.',
-      features: [
-        'Sites responsivos e otimizados',
-        'E-commerce completo',
-        'Sistemas de gestão (ERP/CRM)',
-        'APIs e integrações',
-        'Painel administrativo',
-        'SEO otimizado',
-        'Integrações de PDVs com TEF'
-      ],
-      technologies: ['React', 'Node.js', 'TypeScript', 'Next.js', 'PostgreSQL', 'MongoDB', 'MySql'],
-      price: 'A partir de R$ 500',
-      delivery: '15-90 dias'
-    },
-    {
-      icon: Smartphone,
-      title: 'Desenvolvimento Mobile',
-      subtitle: 'Apps nativos e híbridos para iOS e Android',
-      description: 'Criamos aplicativos móveis que proporcionam uma experiência excepcional aos usuários. Seja nativo ou híbrido, desenvolvemos soluções que atendem perfeitamente às necessidades do seu negócio.',
-      features: [
-        'Apps nativos (iOS/Android)',
-        'Apps híbridos multiplataforma',
-        'Interface intuitiva (UI/UX)',
-        'Integração com APIs',
-        'Push notifications',
-        'Publicação nas stores'
-      ],
-      technologies: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Firebase', 'Expo Go'],
-      price: 'A partir de R$ 5.000',
-      delivery: '30-60 dias'
-    },
-    {
-      icon: Settings,
-      title: 'Consultoria em TI',
-      subtitle: 'Estratégias digitais e otimização de processos',
-      description: 'Analisamos sua infraestrutura atual e propomos soluções tecnológicas que aumentam a produtividade e reduzem custos. Nossa consultoria abrange desde arquitetura de sistemas até estratégias de transformação digital.',
-      features: [
-        'Análise de infraestrutura',
-        'Arquitetura de sistemas',
-        'Otimização de processos',
-        'Migração para nuvem',
-        'Segurança da informação',
-        'Treinamento de equipes'
-      ],
-      technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'DevOps'],
-      price: 'A partir de R$ 0',
-    },
-    {
-      icon: Computer,
-      title: 'Suporte Contínuo',
-      subtitle: 'Manutenção, Atualização e Configuração de Firewall',
-      description: 'Oferecemos suporte técnico contínuo para garantir que seus computadores e sistemas estejam sempre atualizados, seguros e funcionando perfeitamente. Nosso serviço inclui manutenção preventiva, atualizações de software e configuração de firewalls para proteger seus dados.',
-      features: [
-        'Manutenção preventiva e corretiva',
-        'Atualizações de software e sistema operacional',
-        'Configuração e gerenciamento de firewall',
-        'Otimização de desempenho',
-        'Remoção de vírus e malwares',
-        'Suporte remoto e presencial'
-      ],
-      technologies: ['Windows', 'Linux', 'macOS', 'Norton', 'McAfee', 'ZoneAlarm', 'AnyDesk'],
-      price: 'A partir de R$ 120',
-    }
-  ];
 
   const whyChooseUs = [
     {
@@ -109,14 +41,14 @@ const Servicos = () => {
       <section className="py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="space-y-20">
-            {services.map((service, index) => {
+            {services.sort((a, b) => a.title.localeCompare(b.title)).map((service, index) => {
               const IconComponent = service.icon;
               const isEven = index % 2 === 0;
 
               return (
                 <div
                   key={service.title}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-dense' : ''}`}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center scroll-mt-28 ${!isEven ? 'lg:grid-flow-dense' : ''}`}
                 >
                   {/* Content */}
                   <div className={`space-y-6 ${!isEven ? 'lg:col-start-2' : ''}`}>
@@ -124,13 +56,15 @@ const Servicos = () => {
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center neon-glow">
                         <IconComponent className="h-6 w-6 text-primary" />
                       </div>
-                      <div>
+                      <div
+                      >
                         <h2 className="text-3xl font-bold">{service.title}</h2>
                         <p className="text-muted-foreground">{service.subtitle}</p>
                       </div>
                     </div>
 
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-lg text-muted-foreground leading-relaxed"
+                    >
                       {service.description}
                     </p>
 
