@@ -4,27 +4,11 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, CheckCircle, Code, Globe, Settings, Shield, Smartphone, Zap } from 'lucide-react';
+import { services } from '@/contants/services';
+import { ArrowRight, CheckCircle, Globe, Shield, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
-  const services = [
-    {
-      icon: Code,
-      title: 'Desenvolvimento Web',
-      description: 'Sites institucionais, e-commerce, sistemas web personalizados e aplicações sob demanda.',
-    },
-    {
-      icon: Smartphone,
-      title: 'Desenvolvimento Mobile',
-      description: 'Apps nativos e híbridos para iOS e Android com funcionalidades específicas para seu negócio.',
-    },
-    {
-      icon: Settings,
-      title: 'Consultoria em TI',
-      description: 'Análise técnica, arquitetura de sistemas e estratégias digitais para otimizar seus processos.',
-    },
-  ];
-
   const benefits = [
     {
       icon: Zap,
@@ -155,8 +139,8 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.sort((a, b) => a.title.localeCompare(b.title)).map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <Card
@@ -169,14 +153,16 @@ const Index = () => {
                       <IconComponent className="h-8 w-8 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-                    <Button
-                      variant="outline"
-                      className="group-hover:border-primary group-hover:text-primary transition-colors"
-                    >
-                      Saiba Mais
-                      <ArrowRight size={16} className="ml-2" />
-                    </Button>
+                    <p className="text-muted-foreground leading-relaxed mb-6">{service.summaryDescription}</p>
+                    <Link to={`/servicos`}>
+                      <Button
+                        variant="outline"
+                        className="group-hover:border-primary group-hover:text-primary transition-colors"
+                      >
+                        Saiba Mais
+                        <ArrowRight size={16} className="ml-2" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               );
