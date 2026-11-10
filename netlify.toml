@@ -1,4 +1,11 @@
+# Configuração de build para React / Vite
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Regra de fallback para SPA (redireciona todas as subrotas para index.html)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = true
